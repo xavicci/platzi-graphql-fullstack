@@ -16,3 +16,7 @@ const server = new ApolloServer({
   resolvers
 })
 
+const server = new ApolloServer({
+  typeDefs,
+  resolvers
+})
