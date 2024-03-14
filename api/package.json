@@ -3,5 +3,14 @@
   "version": "0.1.0",
   "description": "Backend de nuestra aplicación con una API en GraphQL",
   "main": "index.js",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon src/index.ts"
+  },
+  "dependencies": {
+    "@apollo/server": "^4.10.1",
+    "graphql": "^16.8.1",
+    "nodemon": "^3.1.0",
+    "ts-node": "^10.9.2"
+  }
 }
