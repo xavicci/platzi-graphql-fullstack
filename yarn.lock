@@ -207,6 +207,47 @@
     "@jridgewell/resolve-uri" "^3.0.3"
     "@jridgewell/sourcemap-codec" "^1.4.10"
 
+"@prisma/client@^5.11.0":
+  version "5.11.0"
+  resolved "https://registry.npmjs.org/@prisma/client/-/client-5.11.0.tgz"
+  integrity sha512-SWshvS5FDXvgJKM/a0y9nDC1rqd7KG0Q6ZVzd+U7ZXK5soe73DJxJJgbNBt2GNXOa+ysWB4suTpdK5zfFPhwiw==
+
+"@prisma/debug@5.11.0":
+  version "5.11.0"
+  resolved "https://registry.npmjs.org/@prisma/debug/-/debug-5.11.0.tgz"
+  integrity sha512-N6yYr3AbQqaiUg+OgjkdPp3KPW1vMTAgtKX6+BiB/qB2i1TjLYCrweKcUjzOoRM5BriA4idrkTej9A9QqTfl3A==
+
+"@prisma/engines-version@5.11.0-15.efd2449663b3d73d637ea1fd226bafbcf45b3102":
+  version "5.11.0-15.efd2449663b3d73d637ea1fd226bafbcf45b3102"
+  resolved "https://registry.npmjs.org/@prisma/engines-version/-/engines-version-5.11.0-15.efd2449663b3d73d637ea1fd226bafbcf45b3102.tgz"
+  integrity sha512-WXCuyoymvrS4zLz4wQagSsc3/nE6CHy8znyiMv8RKazKymOMd5o9FP5RGwGHAtgoxd+aB/BWqxuP/Ckfu7/3MA==
+
+"@prisma/engines@5.11.0":
+  version "5.11.0"
+  resolved "https://registry.npmjs.org/@prisma/engines/-/engines-5.11.0.tgz"
+  integrity sha512-gbrpQoBTYWXDRqD+iTYMirDlF9MMlQdxskQXbhARhG6A/uFQjB7DZMYocMQLoiZXO/IskfDOZpPoZE8TBQKtEw==
+  dependencies:
+    "@prisma/debug" "5.11.0"
+    "@prisma/engines-version" "5.11.0-15.efd2449663b3d73d637ea1fd226bafbcf45b3102"
+    "@prisma/fetch-engine" "5.11.0"
+    "@prisma/get-platform" "5.11.0"
+
+"@prisma/fetch-engine@5.11.0":
+  version "5.11.0"
+  resolved "https://registry.npmjs.org/@prisma/fetch-engine/-/fetch-engine-5.11.0.tgz"
+  integrity sha512-994viazmHTJ1ymzvWugXod7dZ42T2ROeFuH6zHPcUfp/69+6cl5r9u3NFb6bW8lLdNjwLYEVPeu3hWzxpZeC0w==
+  dependencies:
+    "@prisma/debug" "5.11.0"
+    "@prisma/engines-version" "5.11.0-15.efd2449663b3d73d637ea1fd226bafbcf45b3102"
+    "@prisma/get-platform" "5.11.0"
+
+"@prisma/get-platform@5.11.0":
+  version "5.11.0"
+  resolved "https://registry.npmjs.org/@prisma/get-platform/-/get-platform-5.11.0.tgz"
+  integrity sha512-rxtHpMLxNTHxqWuGOLzR2QOyQi79rK1u1XYAVLZxDGTLz/A+uoDnjz9veBFlicrpWjwuieM4N6jcnjj/DDoidw==
+  dependencies:
+    "@prisma/debug" "5.11.0"
+
 "@protobufjs/aspromise@^1.1.1", "@protobufjs/aspromise@^1.1.2":
   version "1.1.2"
 
@@ -1277,6 +1318,7 @@ picomatch@^2.0.4, picomatch@^2.2.1:
   version "0.1.0"
   resolved "file:"
   dependencies:
+    "@types/node" "^20.11.27"
     eslint "7.x"
     prettier "^2.4.1"
     typescript "4.4.x"
@@ -1290,6 +1332,13 @@ prettier@^2.4.1:
   version "2.4.1"
   resolved "https://registry.npmjs.org/prettier/-/prettier-2.4.1.tgz"
   integrity sha512-9fbDAXSBcc6Bs1mZrDYb3XKzDLm4EXXL9sC1LqKP5rZkT6KRr/rf9amVUcODVXgguK/isJz0d0hP72WeaKWsvA==
+
+prisma@*, prisma@^5.11.0:
+  version "5.11.0"
+  resolved "https://registry.npmjs.org/prisma/-/prisma-5.11.0.tgz"
+  integrity sha512-KCLiug2cs0Je7kGkQBN9jDWoZ90ogE/kvZTUTgz2h94FEo8pczCkPH7fPNXkD1sGU7Yh65risGGD1HQ5DF3r3g==
+  dependencies:
+    "@prisma/engines" "5.11.0"
 
 progress@^2.0.0:
   version "2.0.3"
