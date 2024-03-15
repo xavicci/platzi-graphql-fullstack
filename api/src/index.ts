@@ -1,4 +1,5 @@
-import {ApolloServer} from '@apollo/server';
+import { ApolloServer } from '@apollo/server'
+import { startStandaloneServer } from '@apollo/server/standalone'
 
 const typeDefs = `
 type Query {
@@ -6,17 +7,24 @@ type Query {
 }
 `
 const resolvers = {
-  Query:{
-    info: ()=>`This is the API of Platzi Node GraphQL`
-  }
+  Query: {
+    info: () => `This is the API of Platzi Node GraphQL`,
+  },
 }
 
-const server = new ApolloServer({
-  typeDefs,
-  resolvers
-})
+// @ts-ignore
+async function listen() {
+  // @ts-ignore
+  const server = new ApolloServer({
+    typeDefs,
+    resolvers,
+  })
 
-const server = new ApolloServer({
-  typeDefs,
-  resolvers
-})
+  const { url } = await startStandaloneServer(server, {
+    listen: { port: 4000 },
+  })
+
+  return url
+}
+
+listen().then((url)=>console.log(`🚀  Server ready at: ${url}`));
