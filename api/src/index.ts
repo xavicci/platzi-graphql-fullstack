@@ -1,17 +1,10 @@
 import { ApolloServer } from '@apollo/server'
 import { startStandaloneServer } from '@apollo/server/standalone'
+import  resolvers  from './resolvers'
+import path from 'path'
+import { readFileSync } from 'fs'
 
-const typeDefs = `
-type Query {
-  info: String!
-}
-`
-const resolvers = {
-  Query: {
-    info: () => `This is the API of Platzi Node GraphQL`,
-  },
-}
-
+const typeDefs = readFileSync(path.join(__dirname, 'schema.graphql'), 'utf8')
 // @ts-ignore
 async function listen() {
   // @ts-ignore
