@@ -2,7 +2,7 @@
 CREATE TABLE "Avocado" (
     "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
     "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "updatedAt" DATETIME NOT NULL,
+    "updatedAt" DATETIME,
     "deletedAt" DATETIME,
     "name" TEXT NOT NULL,
     "sku" TEXT NOT NULL,

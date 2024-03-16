@@ -2,7 +2,7 @@ scalar DateTime
 
 type Query{
   avos:[Avocado]!
-  avo(id:ID!):Avocado
+#  avo(id:ID!):Avocado
 }
 
 type Mutation {
@@ -40,6 +40,7 @@ input AvoCreateInput {
   name: String!
   price: Float!
   image: String!
+  sku: String!
   description: String
   shape: String
   hardiness: String

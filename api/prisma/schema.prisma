@@ -14,24 +14,24 @@ datasource db {
 }
 
 model Avocado {
-  id Int @id @default(autoincrement())
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  id        Int       @id @default(autoincrement())
+  createdAt DateTime  @default(now())
+  updatedAt DateTime? @updatedAt
   deletedAt DateTime?
 
-  name String
-  sku String @unique
-  price Float
-  image String
+  name       String
+  sku        String      @unique
+  price      Float
+  image      String
   attributes Attributes?
 }
 
 model Attributes {
-  id  Int @id @default(autoincrement())
+  id          Int     @id @default(autoincrement())
   description String?
-  shape String?
-  hardiness String?
-  taste String?
-  avocado Avocado @relation(fields: [avocadoId],references: [id])
-  avocadoId Int @unique
+  shape       String?
+  hardiness   String?
+  taste       String?
+  avocado     Avocado @relation(fields: [avocadoId], references: [id])
+  avocadoId   Int     @unique
 }
