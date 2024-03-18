@@ -38,7 +38,7 @@ const orm = new PrismaClient()
     path: '/graphql',
   })
 
-  // Modified server startup
+  // Modifittyed server startup
   await new Promise<void>((resolve) =>
     httpServer.listen({ port: 4000 }, resolve)
   )
