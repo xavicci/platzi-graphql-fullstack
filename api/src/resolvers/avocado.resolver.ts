@@ -1,7 +1,7 @@
 // import { createHash } from 'crypto'
-// import { baseModelResolver } from '../base/base.resolver';
-// import { Avocado } from './avocado.model';
-import type { Attributes, Avocado, PrismaClient } from '@prisma/client'
+
+// @ts-ignore
+import type { Attributes, Avocado, PrismaClient, Prisma } from '@prisma/client'
 
 type ResolverContext = {
   orm: PrismaClient,
@@ -9,14 +9,26 @@ type ResolverContext = {
 
 export function findAll(
   parent: unknown,
-  args: unknown,
+  args: {skip?:number,take?:number,where:Prisma.AvocadoWhereInput},
   ctx: ResolverContext): Promise<Avocado[]> {
-  return ctx.orm.avocado.findMany()
+  return ctx.orm.avocado.findMany({
+    include: {
+      attributes: true,
+    },
+    skip:args.skip,
+    take:args.take,
+    where:args.where
+  })
 }
 
-// export function findOne(id: string): Avocado | null {
-//   return avos[0]
-// }
+export function findOne(parent: unknown, args: { id: string }, ctx: ResolverContext): Promise<Avocado | null> {
+  return ctx.orm.avocado.findUnique({
+    where: { id: parseInt(args.id, 10) },
+    include: {
+      attributes: true,
+    },
+  })
+}
 
 export const resolver: Record<
   keyof (Avocado & { attributes: Attributes }),

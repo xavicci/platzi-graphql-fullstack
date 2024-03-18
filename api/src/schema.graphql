@@ -1,8 +1,8 @@
 scalar DateTime
 
 type Query{
-  avos:[Avocado]!
-#  avo(id:ID!):Avocado
+  avos(skip:Int, take:Int,where:AvoWhereInput):[Avocado]!
+  avo(id:ID!):Avocado
 }
 
 type Mutation {
@@ -45,4 +45,23 @@ input AvoCreateInput {
   shape: String
   hardiness: String
   taste: String
+}
+
+input AvoWhereInput {
+  name: StringFilterInput
+  price:Float
+}
+
+input StringFilterInput {
+ equals: String
+ in: [String]
+ notIn:[String]
+ lt: String
+ let: String
+ gt: String
+ gte: String
+ contains: String
+ startsWith: String
+ endsWith: String
+ not: String
 }

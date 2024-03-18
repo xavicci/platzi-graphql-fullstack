@@ -7,8 +7,6 @@ import { PrismaClient } from '@prisma/client'
 
 const orm = new PrismaClient()
 
-
-
 const typeDefs = readFileSync(path.join(__dirname, 'schema.graphql'), 'utf8')
 
 // @ts-ignore
@@ -26,7 +24,6 @@ async function listen() {
     }),
 
   })
-
   return url
 }
 
