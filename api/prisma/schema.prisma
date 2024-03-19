@@ -1,17 +1,18 @@
 // This is your Prisma schema file,
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
 
 generator client {
   provider = "prisma-client-js"
 }
 
-datasource db {
-  provider = "sqlite"
-  url      = "file:./dev.db"
-}
+
 
 model Avocado {
   id        Int       @id @default(autoincrement())
@@ -33,5 +34,14 @@ model Attributes {
   hardiness   String?
   taste       String?
   avocado     Avocado @relation(fields: [avocadoId], references: [id])
-  avocadoId   Int     @unique
+
+  avocadoId   Int
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  username  String   @unique
+  password  String
+  createdAt DateTime @default(now())
+
 }
