@@ -1,7 +1,7 @@
 node_modules
-# Ignore SQLite
-*.db
-*.db-journal
 
-# Ignore env
+# Keep environment variables out of version control
 .env
+*.next
+/client/.next
+

@@ -5,6 +5,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
+
     "build": "prisma generate && yarn clean && tsc --build && yarn copyfiles",
     "start": "node ../dist/api",
     "migrate:prod": "npx prisma migrate deploy && node ../dist/api/src/createAdmin.js",
@@ -37,5 +38,6 @@
     "prisma": "3.15.2",
     "rimraf": "^3.0.2",
     "ts-jest": "^27.0.7"
+
   }
 }
